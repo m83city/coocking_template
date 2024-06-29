@@ -1,0 +1,51 @@
+._inter-font {
+  font-family: "Inter", sans-serif;
+  color: #000000;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+@mixin _container($direction, $maxW, $minW, $content) {
+  display: flex;
+  flex-direction: $direction;
+  max-width: $maxW;
+  min-width: $minW;
+  justify-content: $content;
+}
+
+.header {
+  @extend ._inter-font;
+  @include _container(row, 100%, 50%, space-between);
+  min-height: 10dvh;
+  max-height: 20%;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+  &Container {
+    @include _container(row, 100%, 100%, space-evenly);
+  }
+
+  &Logo {
+    max-height: 30%;
+    min-height: 20%;
+    max-width: fit-content;
+    min-width: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  &Menu {
+    &Container {
+      @include _container(row, 50%, 35%, space-evenly);
+      align-items: center;
+    }
+    &Element {
+      padding-left: 1%;
+      padding-right: 1%;
+      cursor: pointer;
+    }
+  }
+  &SocialMediaContainer {
+    @include _container(row, 10%, 10%, space-around);
+    align-items: center;
+  }
+}

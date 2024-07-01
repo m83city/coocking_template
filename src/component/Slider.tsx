@@ -1,5 +1,7 @@
 import SliderElement, { ISliderElement } from "./SliderElement";
 import { v4 as uuidv4 } from "uuid";
+import timer from "../img/timer.svg";
+import forkKnife from "../img/forkKnife.svg";
 
 function Slider() {
   const sliderElementState: ISliderElement[] = [
@@ -12,8 +14,12 @@ function Slider() {
       recipeTimeCooking: 30,
       recipeIngredient: [
         {
-          logo: "url",
+          logo: timer,
           title: "30 minutes",
+        },
+        {
+          logo: forkKnife,
+          title: "Chicken",
         },
       ],
     },

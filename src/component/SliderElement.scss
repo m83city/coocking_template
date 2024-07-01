@@ -1,0 +1,77 @@
+@mixin _container($direction, $maxW, $minW, $content) {
+  display: flex;
+  flex-direction: $direction;
+  max-width: $maxW;
+  min-width: $minW;
+  justify-content: $content;
+}
+
+.tag {
+  max-width: fit-content;
+  min-width: 17%;
+  padding: 0.5rem 0.9rem 0.5rem 0.9rem;
+  background-color: rgba($color: #000000, $alpha: 0.05);
+  justify-content: space-between;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 5%;
+  &Hot {
+    @extend .tag;
+    font-weight: 600;
+    background-color: rgba($color: #ffffff, $alpha: 1);
+  }
+}
+
+.slider {
+  background-color: #e7fafe;
+  @include _container(row, 100%, 60%, space-between);
+  max-width: 75%;
+  border-radius: 60px;
+  &Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4%;
+    position: relative;
+    width: 50%;
+  }
+  &Title {
+    font-size: 4rem;
+    font-weight: 600;
+  }
+  &Badge {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+  }
+  &TagContainer {
+    display: flex;
+    justify-content: flex-start;
+  }
+  &AuthorContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &Namespaces {
+      display: flex;
+    }
+  }
+  &AuthorImage {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  &NameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &DishPhoto {
+    border-bottom-right-radius: 60px;
+    border-top-right-radius: 60px;
+    max-width: 50%;
+  }
+}

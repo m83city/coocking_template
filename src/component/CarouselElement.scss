@@ -24,11 +24,16 @@
   }
 }
 
-.slider {
+.carousel {
   background-color: #e7fafe;
   @include _container(row, 100%, 60%, space-between);
   max-width: 75%;
   border-radius: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  padding: auto;
+  position: relative;
   &Content {
     display: flex;
     flex-direction: column;
@@ -43,8 +48,8 @@
   }
   &Badge {
     position: absolute;
-    left: 50%;
-    top: 20%;
+    left: 45%;
+    top: 10%;
   }
   &TagContainer {
     display: flex;
@@ -55,7 +60,9 @@
     flex-direction: row;
     justify-content: space-between;
     &Namespaces {
+      max-width: fit-content;
       display: flex;
+      flex-direction: row;
     }
   }
   &AuthorImage {
@@ -64,6 +71,7 @@
     height: 50px;
   }
   &NameContainer {
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;

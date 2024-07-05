@@ -1,12 +1,12 @@
 import "./App.css";
-import Slider from "./component/Slider";
+import CarouselFood from "./component/CarouselFood";
 import Home from "./home/Home";
 
 function App() {
   return (
     <div className="App">
       <Home></Home>
-      <Slider />
+      <CarouselFood />
     </div>
   );
 }

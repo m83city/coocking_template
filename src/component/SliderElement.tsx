@@ -24,7 +24,7 @@ function SliderElement(sliderElement: ISliderElement) {
 
   return (
     <div className="slider">
-      <div className="sliderContent">
+      <section className="sliderContent">
         {Tag(pergamentImage, "Hot Recipes", "Hot")}
         <div className="sliderTitle">{sliderElement.recipeSliderTitle}</div>
         {sliderElement.recipeSliderDescription}
@@ -48,7 +48,7 @@ function SliderElement(sliderElement: ISliderElement) {
 
           <button>{"View Recipes"}</button>
         </div>
-      </div>
+      </section>
       <img className="sliderBadge" src={badge} alt="Badge" />
       <img className="sliderDishPhoto" src={dishPreview} alt="Dish preview" />
     </div>

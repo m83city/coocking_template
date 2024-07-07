@@ -3,6 +3,7 @@ import badge from "../img/badge.svg";
 import dishPreview from "../img/dish_preview.png";
 import authorImage from "../img/author.webp";
 import pergamentImage from "../img/iconTag.png";
+import buttonCircle from "../img/button_circle.svg";
 import "./CarouselElement.scss";
 export interface ICarouselElement {
   authorName: string;
@@ -48,7 +49,10 @@ function CarouselElement(carouselElement: ICarouselElement) {
             </div>
           </div>
 
-          <button>{"View Recipes"}</button>
+          <button className="carouselButton">
+            <span className="carouselButtonLabel">{"View Recipes"}</span>
+            <img src={buttonCircle} alt="Arrow" />
+          </button>
         </div>
       </section>
       <img className="carouselBadge" src={badge} alt="Badge" />

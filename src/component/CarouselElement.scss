@@ -6,24 +6,6 @@
   justify-content: $content;
 }
 
-.tag {
-  max-width: fit-content;
-  min-width: 17%;
-  padding: 0.5rem 0.9rem 0.5rem 0.9rem;
-  background-color: rgba($color: #000000, $alpha: 0.05);
-  justify-content: space-between;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 5%;
-  &Hot {
-    @extend .tag;
-    font-weight: 600;
-    background-color: rgba($color: #ffffff, $alpha: 1);
-  }
-}
-
 .carousel {
   background-color: #e7fafe;
   @include _container(row, 100%, 60%, space-between);

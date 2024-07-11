@@ -1,5 +1,5 @@
-import CarouselFood from "../component/CarouselFood";
-import Categories from "../component/Categories";
+import CarouselFood from "./CarouselFood";
+import Categories from "./Categories";
 import Header from "../component/Header";
 
 function Home() {

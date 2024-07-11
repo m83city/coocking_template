@@ -5,6 +5,7 @@ import authorImage from "../img/author.webp";
 import pergamentImage from "../img/iconTag.png";
 import buttonCircle from "../img/button_circle.svg";
 import "./CarouselElement.scss";
+import TagFood from "./TagFood";
 export interface ICarouselElement {
   authorName: string;
   timeCreate: string;
@@ -14,27 +15,27 @@ export interface ICarouselElement {
   recipeIngredient: { logo: string; title: string }[];
 }
 function CarouselElement(carouselElement: ICarouselElement) {
-  function Tag(logoUrl: string, title: string, shiftTag?: string) {
-    return (
-      <div className={`tag${shiftTag ? shiftTag : ""}`} key={uuidv4()}>
-        <img src={logoUrl} alt="Tag logo" key={uuidv4()}></img>
-        <div key={uuidv4()}>{title}</div>
-      </div>
-    );
-  }
-
   return (
     <div className="carousel">
       <section className="carouselContent">
-        {Tag(pergamentImage, "Hot Recipes", "Hot")}
+        <TagFood
+          logoUrl={pergamentImage}
+          title={"Hot Recipes"}
+          backgroundColor={"White"}
+        />
         <div className="carouselTitle">
           {carouselElement.recipeCarouselTitle}
         </div>
         {carouselElement.recipeCarouselDescription}
         <div className="carouselTagContainer">
-          {carouselElement.recipeIngredient.map((tagElement) =>
-            Tag(tagElement.logo, tagElement.title)
-          )}
+          {carouselElement.recipeIngredient.map((tagElement) => (
+            <TagFood
+              key={uuidv4()}
+              backgroundColor={"Dark"}
+              logoUrl={tagElement.logo}
+              title={tagElement.title}
+            />
+          ))}
         </div>
         <div className="carouselAuthorContainer">
           <div className="carouselAuthorContainerNamespaces">

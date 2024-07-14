@@ -1,4 +1,6 @@
-import CarouselElement, { ICarouselElement } from "./CarouselElement";
+import CarouselElement, {
+  ICarouselElement,
+} from "../component/CarouselElement";
 import { v4 as uuidv4 } from "uuid";
 import timer from "../img/timer.svg";
 import forkKnife from "../img/forkKnife.svg";

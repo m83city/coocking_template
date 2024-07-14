@@ -6,6 +6,8 @@ import meat from "../img/meat.png";
 import desert from "../img/desert.png";
 import lunch from "../img/lunch.png";
 import chocolate from "../img/chocolate.png";
+import { v4 as uuidv4 } from "uuid";
+
 function Categories() {
   interface ICategories {
     imageUrl: string;
@@ -48,7 +50,10 @@ function Categories() {
       <div className="categoriesContainer">
         {categoties.map((element: ICategories) => {
           return (
-            <div className={`categoriesElement ${element.label}`}>
+            <div
+              className={`categoriesElement ${element.label}`}
+              key={uuidv4()}
+            >
               <img
                 src={element.imageUrl}
                 alt="category img"

@@ -1,0 +1,21 @@
+.tag {
+  max-width: fit-content;
+  min-width: 17%;
+  padding: 0.5rem 0.9rem 0.5rem 0.9rem;
+  justify-content: space-between;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 5%;
+  &White {
+    font-weight: 600;
+    background-color: rgba($color: #ffffff, $alpha: 1);
+  }
+  &Transparent {
+    background-color: rgba($color: #000000, $alpha: 0);
+  }
+  &Dark {
+    background-color: rgba($color: #000000, $alpha: 0.05);
+  }
+}

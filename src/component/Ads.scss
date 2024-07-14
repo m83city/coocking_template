@@ -1,0 +1,22 @@
+.ads {
+  position: relative;
+  align-items: center;
+  background: linear-gradient((rgba(53, 115, 85, 1), rgba(29, 72, 59, 1)));
+  border-radius: 30px;
+  max-height: 350px;
+  margin: 5%;
+  &Mask {
+    border-radius: 30px;
+    width: 100%;
+    height: 90%;
+  }
+  &Food {
+    min-width: 100px;
+    max-width: 300px;
+    min-height: 100px;
+    max-height: 300px;
+    position: absolute;
+    top: 12%;
+    left: 12%;
+  }
+}

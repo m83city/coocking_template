@@ -1,7 +1,7 @@
 import facebook from "../img/facebook.svg";
 import logo from "../img/logo.svg";
 import twitter from "../img/twitter.svg";
-import instagram from "../img/instagram.svg";
+import instagram from "../img/instagramBlack.svg";
 import { v4 as uuidv4 } from "uuid";
 import "./Header.scss";
 function Header() {

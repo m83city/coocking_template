@@ -6,6 +6,7 @@ import pergamentImage from "../img/iconTag.png";
 import buttonCircle from "../img/button_circle.svg";
 import "./CarouselElement.scss";
 import TagFood from "./TagFood";
+import Button from "./Button";
 export interface ICarouselElement {
   authorName: string;
   timeCreate: string;
@@ -49,11 +50,7 @@ function CarouselElement(carouselElement: ICarouselElement) {
               <div>{carouselElement.timeCreate}</div>
             </div>
           </div>
-
-          <button className="carouselButton">
-            <span className="carouselButtonLabel">{"View Recipes"}</span>
-            <img src={buttonCircle} alt="Arrow" />
-          </button>
+          <Button label={"View Recipes"} buttonImageURL={buttonCircle} />
         </div>
       </section>
       <img className="carouselBadge" src={badge} alt="Badge" />

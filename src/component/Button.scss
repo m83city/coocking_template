@@ -1,0 +1,14 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #000000;
+  border-radius: 16px;
+  color: #ffffff;
+  align-items: center;
+  padding: 0 5% 0 5%;
+  &Image {
+    margin-left: 15px;
+  }
+}

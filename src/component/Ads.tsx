@@ -1,12 +1,11 @@
+import useImages from "../hook/useImages";
 import "./Ads.scss";
-import adsMask from "../img/adsMask.png";
-import adsFood from "../img/adsFood.png";
-//
 function Ads() {
+  const image = useImages().getImageURL;
   return (
     <div className="ads">
-      <img className="adsMask" alt="" src={adsMask}></img>
-      <img className="adsFood" alt="" src={adsFood}></img>
+      <img className="adsMask" alt="" src={image("adsMask")}></img>
+      <img className="adsFood" alt="" src={image("adsFood")}></img>
     </div>
   );
 }

@@ -1,9 +1,6 @@
-import facebook from "../img/facebook.svg";
-import logo from "../img/logo.svg";
-import twitter from "../img/twitter.svg";
-import instagram from "../img/instagramBlack.svg";
 import { v4 as uuidv4 } from "uuid";
 import "./Header.scss";
+import useImages from "../hook/useImages";
 function Header() {
   const headerMenu: string[] = [
     "Home",
@@ -12,11 +9,16 @@ function Header() {
     "Contact",
     "About us",
   ];
-  const headerSocialMediaGroup: string[] = [facebook, instagram, twitter];
+  const image = useImages().getImageURL;
+  const headerSocialMediaGroup: string[] = [
+    image("facebook"),
+    image("instagramBlackIcon"),
+    image("twitter"),
+  ];
   return (
     <div className="header">
       <div className="headerContainer">
-        <img className="headerLogo" src={logo} alt="logo"></img>
+        <img className="headerLogo" src={image("logo")} alt="logo"></img>
         <div className="headerMenuContainer">
           {headerMenu.map((element) => (
             <div className="headerMenuElement" key={uuidv4()}>

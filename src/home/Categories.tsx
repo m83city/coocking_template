@@ -1,41 +1,36 @@
-import React from "react";
 import "./Categories.scss";
-import breakfast from "../img/breakfast.png";
-import vegan from "../img/vegan.png";
-import meat from "../img/meat.png";
-import desert from "../img/desert.png";
-import lunch from "../img/lunch.png";
-import chocolate from "../img/chocolate.png";
 import { v4 as uuidv4 } from "uuid";
+import useImages from "../hook/useImages";
 
 function Categories() {
+  const image = useImages().getImageURL;
   interface ICategories {
     imageUrl: string;
     label: string;
   }
   const categoties: ICategories[] = [
     {
-      imageUrl: breakfast,
+      imageUrl: image("breakfast"),
       label: "Breakfast",
     },
     {
-      imageUrl: vegan,
+      imageUrl: image("vegan"),
       label: "Vegan",
     },
     {
-      imageUrl: meat,
+      imageUrl: image("meat"),
       label: "Meat",
     },
     {
-      imageUrl: desert,
+      imageUrl: image("desert"),
       label: "Dessert",
     },
     {
-      imageUrl: lunch,
+      imageUrl: image("lunch"),
       label: "Lunch",
     },
     {
-      imageUrl: chocolate,
+      imageUrl: image("chocolate"),
       label: "Chocolate",
     },
   ];

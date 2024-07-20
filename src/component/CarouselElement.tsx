@@ -1,12 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
-import badge from "../img/badge.svg";
-import dishPreview from "../img/dish_preview.png";
-import authorImage from "../img/author.webp";
-import pergamentImage from "../img/iconTag.png";
-import buttonCircle from "../img/button_circle.svg";
 import "./CarouselElement.scss";
 import TagFood from "./TagFood";
 import Button from "./Button";
+import useImages from "../hook/useImages";
 export interface ICarouselElement {
   authorName: string;
   timeCreate: string;
@@ -16,11 +12,12 @@ export interface ICarouselElement {
   recipeIngredient: { logo: string; title: string }[];
 }
 function CarouselElement(carouselElement: ICarouselElement) {
+  const image = useImages().getImageURL;
   return (
     <div className="carousel">
       <section className="carouselContent">
         <TagFood
-          logoUrl={pergamentImage}
+          logoUrl={image("pergamentImage")}
           title={"Hot Recipes"}
           backgroundColor={"White"}
         />
@@ -42,7 +39,7 @@ function CarouselElement(carouselElement: ICarouselElement) {
           <div className="carouselAuthorContainerNamespaces">
             <img
               className="carouselAuthorImage"
-              src={authorImage}
+              src={image("authorImage")}
               alt="Author"
             ></img>
             <div className="carouselNameContainer">
@@ -50,11 +47,18 @@ function CarouselElement(carouselElement: ICarouselElement) {
               <div>{carouselElement.timeCreate}</div>
             </div>
           </div>
-          <Button label={"View Recipes"} buttonImageURL={buttonCircle} />
+          <Button
+            label={"View Recipes"}
+            buttonImageURL={image("buttonCircle")}
+          />
         </div>
       </section>
-      <img className="carouselBadge" src={badge} alt="Badge" />
-      <img className="carouselDishPhoto" src={dishPreview} alt="Dish preview" />
+      <img className="carouselBadge" src={image("badge")} alt="Badge" />
+      <img
+        className="carouselDishPhoto"
+        src={image("dishPreview")}
+        alt="Dish preview"
+      />
     </div>
   );
 }

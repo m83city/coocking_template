@@ -1,36 +1,36 @@
+import useImages from "../hook/useImages";
 import "./RecipeCard.scss";
-import favoriteOn from "../img/favoriteOn.svg";
-import favoriteOff from "../img/favoriteOff.svg";
-import timerImage from "../img/timer.svg";
-import forkKnife from "../img/forkKnife.svg";
 import TagFood from "./TagFood";
 export interface IRecipeCard {
+  className?: string;
   recipeId?: string;
   ads?: boolean;
   title?: string;
   favorite?: boolean;
   typeFood?: string;
   imageFood?: string;
-  callback: (idCard: string) => void;
+  handleFavorite: (idCard: string) => void;
 }
 function RecipeCard({
   title,
   favorite,
   typeFood,
   imageFood,
-  callback,
+  handleFavorite,
   recipeId,
+  className,
 }: IRecipeCard) {
+  const image = useImages().getImageURL;
   return (
-    <div className="recipeCard">
+    <div className={`recipeCard ${className}`}>
       <img className="recipeCardImageFood" src={imageFood} alt=""></img>
       <button
         className="recipeCardFavorite"
-        onClick={() => callback(recipeId!)}
+        onClick={() => handleFavorite(recipeId!)}
       >
         <img
           className="recipeCardFavoriteImage"
-          src={favorite ? favoriteOn : favoriteOff}
+          src={favorite ? image("favoriteOn") : image("favoriteOff")}
           alt=""
         ></img>
       </button>
@@ -39,12 +39,12 @@ function RecipeCard({
         <TagFood
           backgroundColor={"Transparent"}
           title={"30 Minutes"}
-          logoUrl={timerImage}
+          logoUrl={image("timerImage")}
         />
         <TagFood
           backgroundColor={"Transparent"}
           title={typeFood!}
-          logoUrl={forkKnife}
+          logoUrl={image("forkKnife")}
         />
       </div>
     </div>

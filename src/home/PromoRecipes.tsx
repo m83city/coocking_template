@@ -107,7 +107,7 @@ function PromoRecipes() {
         {recipes.map(
           ({ favorite, title, typeFood, imageFood, ads, recipeId }) => {
             return ads ? (
-              <Ads />
+              <Ads key={v4()} />
             ) : (
               <RecipeCard
                 handleFavorite={updateFavorite}

@@ -9,6 +9,7 @@ import { useState } from "react";
 import RecipeCard from "../component/RecipeCard";
 import { v4 } from "uuid";
 import useImages from "../hook/useImages";
+import Footer from "../component/Footer";
 
 function Home() {
   const image = useImages().getImageURL;
@@ -115,7 +116,7 @@ function Home() {
           <img src={image("chef")} alt=""></img>
         </div>
       </section>
-      <section key={v4()} className="homeInstagram">
+      <section className="homeInstagram">
         <h2 className="homeInstagramTitle">
           {"Check out @foodieland on Instagram"}"
         </h2>
@@ -126,7 +127,9 @@ function Home() {
         </p>
         <div className="homeInstagramContainer">
           {instagramPostList.map((instagramPostURL) => {
-            return <InstagramEmbed url={instagramPostURL} width={328} />;
+            return (
+              <InstagramEmbed key={v4()} url={instagramPostURL} width={328} />
+            );
           })}
         </div>
         <Button
@@ -165,6 +168,7 @@ function Home() {
           )}
         </div>
       </section>
+      <Footer />
     </>
   );
 }

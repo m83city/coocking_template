@@ -1,7 +1,7 @@
 import CarouselFood from "./CarouselFood";
 import Categories from "./Categories";
 import Header from "../component/Header";
-import PromoRecipes from "./PromoRecipes";
+import RecipesGrid from "./RecipesGrid";
 import Button from "../component/Button";
 import "./Home.scss";
 import { InstagramEmbed } from "react-social-media-embed";
@@ -9,6 +9,8 @@ import { useState } from "react";
 import RecipeCard from "../component/RecipeCard";
 import { v4 } from "uuid";
 import useImages from "../hook/useImages";
+import Footer from "../component/Footer";
+import EmailBox from "../component/EmailBox";
 
 function Home() {
   const image = useImages().getImageURL;
@@ -26,7 +28,40 @@ function Home() {
     imageFood?: string;
   }
 
-  const [recipesList, setRecipesList] = useState<IRecipeCard[]>([
+  const [recipesListFooter, setRecipesListFooter] = useState<IRecipeCard[]>([
+    {
+      recipeId: "0696b562-dca2-494f-b519-8ba2c4be929e",
+      favorite: false,
+      title: "Big and Juicy Wagyu Beef Cheeseburger",
+      typeFood: "Snack",
+      imageFood: image("burger"),
+    },
+    {
+      recipeId: "e3da40f5-4792-4d88-bcec-7b69652c31f3",
+      favorite: true,
+      title: "Fresh Lime Roasted Salmon with Ginger Sauce",
+      typeFood: "Fish",
+      imageFood: image("salmon"),
+    },
+    {
+      recipeId: "0e8e32bb-f1d4-4caf-8eed-744344f96511",
+      favorite: false,
+      title: "Strawberry Oatmeal Pancake with Honey Syrup",
+      typeFood: "Breakfast",
+      imageFood: image("pancake"),
+    },
+    {
+      recipeId: "1fea3ce2-f547-4095-8ea9-99c5116d1761",
+      favorite: true,
+      title: "Chicken Meatballs with Cream Cheese",
+      typeFood: "Meat",
+      imageFood: image("meatBall"),
+    },
+  ]);
+
+  const [recipesListDelicious, setRecipesListDelicious] = useState<
+    IRecipeCard[]
+  >([
     {
       recipeId: "0696b562-dca2-494f-b519-8ba2c4be929e",
       favorite: false,
@@ -84,21 +119,91 @@ function Home() {
       imageFood: image("healthy"),
     },
   ]);
-  const updateFavorite = (idCard: string) => {
-    console.log(idCard);
-    setRecipesList(
-      recipesList.map((card) =>
-        card.recipeId === idCard ? { ...card, favorite: !card.favorite } : card
-      )
-    );
-  };
+
+  const [recipesTasty, setRecipesTasty] = useState<IRecipeCard[]>([
+    {
+      recipeId: "0696b562-dca2-494f-b519-8ba2c4be929e",
+      favorite: false,
+      title: "Big and Juicy Wagyu Beef Cheeseburger",
+      typeFood: "Snack",
+      imageFood: image("burger"),
+    },
+    {
+      recipeId: "e3da40f5-4792-4d88-bcec-7b69652c3ff3",
+      favorite: true,
+      title: "Fresh Lime Roasted Salmon with Ginger Sauce",
+      typeFood: "Fish",
+      imageFood: image("salmon"),
+    },
+    {
+      recipeId: "0e8e32bb-f1d4-4caf-8a3d-744344f96511",
+      favorite: false,
+      title: "Strawberry Oatmeal Pancake with Honey Syrup",
+      typeFood: "Breakfast",
+      imageFood: image("pancake"),
+    },
+    {
+      recipeId: "1fea3ce2-f547-4585-8ea9-99c5116d1761",
+      favorite: true,
+      title: "Chicken Meatballs with Cream Cheese",
+      typeFood: "Meat",
+      imageFood: image("meatBall"),
+    },
+    {
+      recipeId: "a9fb5517-a75f-4f6b-ab05-87f5ffb0d497",
+      favorite: true,
+      title: "Fresh and Healthy Mixed Mayonnaise Salad",
+      typeFood: "Healthy",
+      imageFood: image("healthy"),
+    },
+    {
+      recipeId: "4b467386-4ed8-46ce-ab02-31390a0fa975",
+      favorite: true,
+      title: "Fruity Pancake with Orange & Blueberry",
+      typeFood: "Sweet",
+      imageFood: image("healthy"),
+    },
+    {
+      recipeId: "feb16a11-0983-41db-ac41-7abcf5643af6",
+      favorite: true,
+      title: "Fresh and Healthy Mixed Mayonnaise Salad",
+      typeFood: "Healthy",
+      imageFood: image("healthy"),
+    },
+    {
+      recipeId: "fd5f9c59-156d-4ace-92ef-9e70eb6621d7",
+      favorite: true,
+      title: "Fresh and Healthy Mixed Mayonnaise Salad",
+      typeFood: "Healthy",
+      imageFood: image("healthy"),
+    },
+    {
+      recipeId: "a9b808f6-710b-4553-88a8-b8ea5958bfb4",
+      favorite: true,
+      title: "Fresh and Healthy Mixed Mayonnaise Salad",
+      typeFood: "Healthy",
+      imageFood: image("healthy"),
+    },
+  ]);
+  // const updateFavorite = (idCard: string) => {
+  //   console.log(idCard);
+  //   setRecipesList(
+  //     recipesList.map((card) =>
+  //       card.recipeId === idCard ? { ...card, favorite: !card.favorite } : card
+  //     )
+  //   );
+  // };
 
   return (
     <>
       <Header />
       <CarouselFood />
       <Categories />
-      <PromoRecipes />
+      <RecipesGrid
+        column={["1fr", "1fr", "1fr"]}
+        recipes={recipesTasty}
+        typeCard="gradient"
+      />
       <section className="homeContent">
         <div className="homeContentHeader">
           <h2 className="homeContentTitle">
@@ -115,7 +220,7 @@ function Home() {
           <img src={image("chef")} alt=""></img>
         </div>
       </section>
-      <section key={v4()} className="homeInstagram">
+      <section className="homeInstagram">
         <h2 className="homeInstagramTitle">
           {"Check out @foodieland on Instagram"}"
         </h2>
@@ -126,7 +231,9 @@ function Home() {
         </p>
         <div className="homeInstagramContainer">
           {instagramPostList.map((instagramPostURL) => {
-            return <InstagramEmbed url={instagramPostURL} width={328} />;
+            return (
+              <InstagramEmbed key={v4()} url={instagramPostURL} width={328} />
+            );
           })}
         </div>
         <Button
@@ -146,25 +253,14 @@ function Home() {
             }
           </p>
         </div>
-        <div className="homeRecipeFooterCards">
-          {recipesList.map(
-            ({ favorite, imageFood, title, recipeId, typeFood }) => {
-              return (
-                <RecipeCard
-                  className={"homeRecipe"}
-                  recipeId={recipeId}
-                  favorite={favorite}
-                  handleFavorite={updateFavorite}
-                  title={title}
-                  imageFood={imageFood}
-                  typeFood={typeFood}
-                  key={v4()}
-                />
-              );
-            }
-          )}
-        </div>
       </section>
+      <RecipesGrid
+        column={["1fr", "1fr", "1fr", "1fr"]}
+        recipes={recipesListDelicious}
+        typeCard={"transparent"}
+      />
+      <EmailBox />
+      <Footer />
     </>
   );
 }

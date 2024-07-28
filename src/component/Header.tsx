@@ -19,13 +19,13 @@ function Header() {
     <div className="header">
       <div className="headerContainer">
         <img className="headerLogo" src={image("logo")} alt="logo"></img>
-        <div className="headerMenuContainer">
+        <ul className="headerMenuContainer">
           {headerMenu.map((element) => (
-            <div className="headerMenuElement" key={uuidv4()}>
+            <li className="headerMenuElement" key={uuidv4()}>
               {element}
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
         <div className="headerSocialMediaContainer">
           {headerSocialMediaGroup.map((element) => (
             <img

@@ -2,6 +2,7 @@ import useImages from "../hook/useImages";
 import "./RecipeCard.scss";
 import TagFood from "./TagFood";
 export interface IRecipeCard {
+  backgroundColor?: string;
   className?: string;
   recipeId?: string;
   ads?: boolean;
@@ -9,24 +10,31 @@ export interface IRecipeCard {
   favorite?: boolean;
   typeFood?: string;
   imageFood?: string;
-  handleFavorite: (idCard: string) => void;
+  // handleFavorite: (idCard: string) => void;
 }
 function RecipeCard({
+  backgroundColor,
   title,
   favorite,
   typeFood,
   imageFood,
-  handleFavorite,
+  //handleFavorite,
   recipeId,
   className,
 }: IRecipeCard) {
   const image = useImages().getImageURL;
   return (
-    <div className={`recipeCard ${className}`}>
-      <img className="recipeCardImageFood" src={imageFood} alt=""></img>
+    <div
+      className={`recipeCard ${className ? className : ""}`}
+      style={{ background: backgroundColor }}
+    >
+      <img className="recipeCardImageFood" src={imageFood} alt="" />
       <button
         className="recipeCardFavorite"
-        onClick={() => handleFavorite(recipeId!)}
+        onClick={
+          () => {}
+          // handleFavorite(recipeId!)
+        }
       >
         <img
           className="recipeCardFavoriteImage"

@@ -27,14 +27,14 @@ import meat from "../img/meat.png";
 import desert from "../img/desert.png";
 import lunch from "../img/lunch.png";
 import chocolate from "../img/chocolate.png";
-import footerEmailBoxLeft from "../img/footer-email-box-left.png"
-import footerEmailBoxRight from "../img/footer-email-box-right.png"
+import emailBoxLeft from "../img/footer-email-box-left.png"
+import emailBoxRight from "../img/footer-email-box-right.png"
 
 
 function useImages(){
   const images = {
-    footerEmailBoxLeft:footerEmailBoxLeft,
-    footerEmailBoxRight:footerEmailBoxRight,
+    emailBoxLeft:emailBoxLeft,
+    emailBoxRight:emailBoxRight,
     vegan:vegan,
     breakfast:breakfast,
     meat:meat,

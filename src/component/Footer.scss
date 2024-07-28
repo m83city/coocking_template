@@ -3,57 +3,66 @@
   flex-direction: column;
   max-width: 75%;
   align-items: center;
-  margin: auto;
-  &EmailBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #e7f9fd;
-    border-radius: 60px;
-    width: 100%;
-    padding-bottom: 100px;
-    position: relative;
-    overflow: hidden;
-
-    &Right {
-      max-width: 20%;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-    }
-    &Left {
-      max-width: 20%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-    &Header {
-      font-size: 3rem;
-    }
-    &Title {
-      text-align: center;
-      max-width: 620px;
-    }
-    &Input {
+  margin: 3% auto 0 auto;
+  &Container {
+    &Top {
+      width: 100%;
+      justify-content: space-between;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      border-radius: 24px;
-      background-color: #ffffff;
-      width: 40%;
-      padding: 1% 0% 1% 2%;
+    }
+    &Bottom {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 
-      &Email {
-        margin: 0 1%;
-        line-height: 3rem;
-        background-color: transparent;
-        border: none;
-        outline: none;
-      }
-      &Button {
-        margin: 0 5%;
-      }
+  &Logo {
+    &Text {
+      color: rgba($color: #000000, $alpha: 0.6);
+    }
+  }
+  &BoxMenu {
+    display: flex;
+    list-style-type: none;
+    &Element {
+      cursor: pointer;
+      margin-left: 30px;
+    }
+  }
+  &Divider {
+    height: 1px;
+    width: 100%;
+    margin-top: 30px;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
+  &Copyright {
+    &Block {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      color: rgba($color: #000000, $alpha: 0.6);
+    }
+    &Text {
+      margin-left: 5px;
+      color: #ff7967;
+    }
+  }
+  &SocialMedia {
+    &Container {
+      position: absolute;
+      right: 0;
+      display: flex;
+      flex-direction: row;
+      max-width: 10%;
+      min-width: 10%;
+      justify-content: space-around;
+      align-items: center;
+    }
+    &Element {
     }
   }
 }

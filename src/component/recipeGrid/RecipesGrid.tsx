@@ -1,6 +1,6 @@
 import { v4 } from "uuid";
 import "./RecipesGrid.scss";
-import RecipeCard, { IRecipeCard } from "../component/RecipeCard";
+import RecipeCard, { IRecipeCard } from "../recipeCard/RecipeCard";
 
 interface IRecipeGrid {
   recipes: IRecipeCard[]; // #TODO CREATE API AND MOVE ALL RECIPE TO MOCK-API

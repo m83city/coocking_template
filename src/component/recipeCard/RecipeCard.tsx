@@ -1,6 +1,6 @@
-import useImages from "../hook/useImages";
+import useImages from "../../hook/useImages";
 import "./RecipeCard.scss";
-import TagFood from "./TagFood";
+import TagFood from "../basic/TagFood";
 export interface IRecipeCard {
   backgroundColor?: string;
   className?: string;

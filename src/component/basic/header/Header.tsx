@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import "./Header.scss";
-import useImages from "../hook/useImages";
+import useImages from "../../../hook/useImages";
 function Header() {
   const headerMenu: string[] = [
     "Home",

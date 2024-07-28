@@ -1,16 +1,15 @@
-import CarouselFood from "./CarouselFood";
-import Categories from "./Categories";
-import Header from "../component/Header";
-import RecipesGrid from "./RecipesGrid";
-import Button from "../component/Button";
+import CarouselFood from "../../component/carousel/CarouselFood";
+import Categories from "../../component/categories/Categories";
+import Header from "../../component/basic/header/Header";
+import RecipesGrid from "../../component/recipeGrid/RecipesGrid";
+import Button from "../../component/basic/Button";
 import "./Home.scss";
 import { InstagramEmbed } from "react-social-media-embed";
 import { useState } from "react";
-import RecipeCard from "../component/RecipeCard";
 import { v4 } from "uuid";
-import useImages from "../hook/useImages";
-import Footer from "../component/Footer";
-import EmailBox from "../component/EmailBox";
+import useImages from "../../hook/useImages";
+import Footer from "../../component/basic/footer/Footer";
+import EmailBox from "../../component/emailBox/EmailBox";
 
 function Home() {
   const image = useImages().getImageURL;
@@ -196,7 +195,6 @@ function Home() {
 
   return (
     <>
-      <Header />
       <CarouselFood />
       <Categories />
       <RecipesGrid
@@ -260,7 +258,6 @@ function Home() {
         typeCard={"transparent"}
       />
       <EmailBox />
-      <Footer />
     </>
   );
 }

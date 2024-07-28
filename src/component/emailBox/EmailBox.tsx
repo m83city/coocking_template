@@ -1,5 +1,5 @@
-import useImages from "../hook/useImages";
-import Button from "./Button";
+import useImages from "../../hook/useImages";
+import Button from "../basic/Button";
 import "./EmailBox.scss";
 function EmailBox() {
   const image = useImages().getImageURL;

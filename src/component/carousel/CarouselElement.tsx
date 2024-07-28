@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 import "./CarouselElement.scss";
-import TagFood from "./TagFood";
-import Button from "./Button";
-import useImages from "../hook/useImages";
+import TagFood from "../basic/TagFood";
+import Button from "../basic/Button";
+import useImages from "../../hook/useImages";
 export interface ICarouselElement {
   authorName: string;
   timeCreate: string;

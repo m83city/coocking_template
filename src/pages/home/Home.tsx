@@ -31,14 +31,14 @@ function Home() {
     <article>
       <CarouselFood />
       <Categories />
-      <header className="recipesHeader">
+      <title className="recipesHeader">
         <h1 className="recipesTitle"> {"Simple and tasty recipes"}</h1>
         <h6 className="recipesSubTitle">
           {
             "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim "
           }
         </h6>
-      </header>
+      </title>
       <RecipesGrid
         amountCards={9}
         column={["1fr", "1fr", "1fr"]}

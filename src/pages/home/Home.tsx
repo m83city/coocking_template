@@ -29,7 +29,6 @@ function Home() {
 
   return (
     <article>
-      <button onClick={() => getRecipeList()}>try api </button>
       <CarouselFood />
       <Categories />
       <RecipesGrid

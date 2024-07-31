@@ -1,6 +1,6 @@
 import "./Categories.scss";
 import { v4 as uuidv4 } from "uuid";
-import useImages from "../../hook/useImages";
+import useImages from "../../tools/hook/useImages";
 
 function Categories() {
   const image = useImages().getImageURL;

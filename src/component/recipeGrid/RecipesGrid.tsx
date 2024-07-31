@@ -1,23 +1,19 @@
 import { v4 } from "uuid";
 import "./RecipesGrid.scss";
-import RecipeCard, { IRecipeCard } from "../recipeCard/RecipeCard";
+import RecipeCard from "../recipeCard/RecipeCard";
+import { IListRecipeCard } from "../../tools/redux/slices/recipeListSlice";
 
 interface IRecipeGrid {
-  recipes: IRecipeCard[]; // #TODO CREATE API AND MOVE ALL RECIPE TO MOCK-API
+  recipes: IListRecipeCard[]; // #TODO CREATE API AND MOVE ALL RECIPE TO MOCK-API
   column: string[];
   typeCard: "transparent" | "gradient";
+  amountCards: number;
 }
 
-function RecipesGrid({ column, typeCard, recipes }: IRecipeGrid) {
-  // const updateFavorite = (idCard: string) => {
-  //   setRecipes((prevRecipes) =>
-  //     prevRecipes.map((card) =>
-  //       card.recipeId === idCard ? { ...card, favorite: !card.favorite } : card
-  //     )
-  //   );
-  // };
+function RecipesGrid({ column, typeCard, recipes, amountCards }: IRecipeGrid) {
   const linearGradient =
     "linear-gradient((rgba(231, 249, 253, 0), rgba(231, 249, 253, 1)))";
+  const modifyRecipe = recipes.slice(0, amountCards);
   return (
     <div className="recipes">
       <header className="recipesHeader">
@@ -33,8 +29,8 @@ function RecipesGrid({ column, typeCard, recipes }: IRecipeGrid) {
         className="recipesGrid"
         style={{ gridTemplateColumns: `${column.join(" ")}` }}
       >
-        {recipes.map(
-          ({ favorite, title, typeFood, imageFood, ads, recipeId }) => {
+        {modifyRecipe.map(
+          ({ favorite, title, typeFood, imageFood, recipeId }) => {
             return (
               <RecipeCard
                 backgroundColor={

@@ -1,4 +1,4 @@
-import useImages from "../../hook/useImages";
+import useImages from "../../tools/hook/useImages";
 import "./Ads.scss";
 function Ads() {
   const image = useImages().getImageURL;

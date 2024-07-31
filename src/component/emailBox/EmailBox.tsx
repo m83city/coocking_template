@@ -1,4 +1,4 @@
-import useImages from "../../hook/useImages";
+import useImages from "../../tools/hook/useImages";
 import Button from "../basic/Button";
 import "./EmailBox.scss";
 function EmailBox() {

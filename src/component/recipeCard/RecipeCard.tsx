@@ -1,6 +1,7 @@
-import useImages from "../../hook/useImages";
+import useImages, { ImagesType } from "../../tools/hook/useImages";
 import "./RecipeCard.scss";
 import TagFood from "../basic/TagFood";
+
 export interface IRecipeCard {
   backgroundColor?: string;
   className?: string;
@@ -9,16 +10,15 @@ export interface IRecipeCard {
   title?: string;
   favorite?: boolean;
   typeFood?: string;
-  imageFood?: string;
-  // handleFavorite: (idCard: string) => void;
+  imageFood: ImagesType;
 }
+
 function RecipeCard({
   backgroundColor,
   title,
   favorite,
   typeFood,
   imageFood,
-  //handleFavorite,
   recipeId,
   className,
 }: IRecipeCard) {
@@ -28,14 +28,8 @@ function RecipeCard({
       className={`recipeCard ${className ? className : ""}`}
       style={{ background: backgroundColor }}
     >
-      <img className="recipeCardImageFood" src={imageFood} alt="" />
-      <button
-        className="recipeCardFavorite"
-        onClick={
-          () => {}
-          // handleFavorite(recipeId!)
-        }
-      >
+      <img className="recipeCardImageFood" src={image(imageFood)} alt="" />
+      <button className="recipeCardFavorite" onClick={() => {}}>
         <img
           className="recipeCardFavoriteImage"
           src={favorite ? image("favoriteOn") : image("favoriteOff")}

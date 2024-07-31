@@ -1,4 +1,4 @@
-import useImages from "../../../hook/useImages";
+import useImages from "../../../tools/hook/useImages";
 import "./Footer.scss";
 import { v4 } from "uuid";
 

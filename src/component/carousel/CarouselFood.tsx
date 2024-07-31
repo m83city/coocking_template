@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import useImages from "../../hook/useImages";
+import useImages from "../../tools/hook/useImages";
 
 function CarouselFood() {
   const image = useImages().getImageURL;

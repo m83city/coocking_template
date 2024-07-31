@@ -15,16 +15,7 @@ function RecipesGrid({ column, typeCard, recipes, amountCards }: IRecipeGrid) {
     "linear-gradient((rgba(231, 249, 253, 0), rgba(231, 249, 253, 1)))";
   const modifyRecipe = recipes.slice(0, amountCards);
   return (
-    <div className="recipes">
-      <header className="recipesHeader">
-        <h1 className="recipesTitle"> {"Simple and tasty recipes"}</h1>
-        <h6 className="recipesSubTitle">
-          {
-            "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim "
-          }
-        </h6>
-      </header>
-
+    <article className="recipes">
       <div
         className="recipesGrid"
         style={{ gridTemplateColumns: `${column.join(" ")}` }}
@@ -47,7 +38,7 @@ function RecipesGrid({ column, typeCard, recipes, amountCards }: IRecipeGrid) {
           }
         )}
       </div>
-    </div>
+    </article>
   );
 }
 export default RecipesGrid;

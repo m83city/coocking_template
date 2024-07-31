@@ -36,7 +36,6 @@ function RecipesGrid({ column, typeCard, recipes, amountCards }: IRecipeGrid) {
                 backgroundColor={
                   typeCard === "transparent" ? "transparent" : linearGradient
                 }
-                //handleFavorite={updateFavorite}
                 recipeId={recipeId}
                 imageFood={imageFood}
                 favorite={favorite}

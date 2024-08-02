@@ -8,6 +8,35 @@ export interface IListRecipeCard {
     typeFood?: string;
     imageFood: ImagesType;
 }
+export interface recipeMock {
+    recipeId?: string;
+    dishName?: string;
+    favorite?: boolean;
+    typeFood?: string;
+    imageFood: ImagesType;
+    details:{
+        createDate:Date,
+        authonName:string,
+        prepTime:number,
+        cookTime:number,
+        mainDish:string,
+        nutrition:{
+            calories:number,
+            totalFat:number,
+            protein:number,
+            carbohydrate:number
+            cholesterol:number
+        }
+        ingredients:{
+            mainDish:string[],
+            sauce:string[]
+        }
+        directions:{
+            title:string,
+            description:string 
+        }[]
+    }
+}
 const initialState:IListRecipeCard[] = []
 export const recipeListSlice = createSlice({
     name:"recipeListSlice",

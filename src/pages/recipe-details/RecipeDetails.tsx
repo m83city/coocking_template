@@ -4,6 +4,7 @@ import RecipesGrid from "../../component/recipeGrid/RecipesGrid";
 import "./RecipeDetails.scss";
 import { RootState } from "../../tools/redux/interfaces/shared";
 import { recipeMock } from "../../tools/redux/slices/recipeListSlice";
+import useImages from "../../tools/hook/useImages";
 export const RecipeDetails = () => {
   const recipesList = useSelector((store: RootState) => store.recipeList);
 
@@ -60,13 +61,14 @@ export const RecipeDetails = () => {
         cholesterol: 37.4,
       },
       prepTime: 15,
-    }
+    },
   };
+  const image = useImages().getImageURL;
   return (
     <>
       <header>
         <div>
-          <h1>{mock.}</h1>
+          <h1>{mock.recipeName}</h1>
           <div className="carouselAuthorContainerNamespaces">
             <img
               className="carouselAuthorImage"
@@ -74,15 +76,21 @@ export const RecipeDetails = () => {
               alt="Author"
             ></img>
             <div className="carouselNameContainer">
-              <div>{carouselElement.authorName}</div>
-              <div>{carouselElement.timeCreate}</div>
+              <div>{mock.details.authonName}</div>
+              <div>{mock.details.createDate.toString()}</div>
             </div>
           </div>
-          <div>prep time</div>
-          <div>cook time</div>
+          <div>
+            <p>{"PREP TIME"}</p>
+            <time>{`${mock.details.prepTime} Minutes`}</time>
+          </div>
+          <div>
+            <p>{"COOK TIME"}</p>
+            <time>{`${mock.details.cookTime} Minutes`}</time>
+          </div>
         </div>
-        <button>print</button>
-        <button>share</button>
+        <button>{"PRINT"}</button>
+        <button>{"SHARE"}</button>
       </header>
       <section>
         <div>

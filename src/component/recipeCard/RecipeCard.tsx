@@ -1,6 +1,8 @@
 import useImages, { ImagesType } from "../../tools/hook/useImages";
 import "./RecipeCard.scss";
 import TagFood from "../basic/TagFood";
+import { useDispatch } from "react-redux";
+import { updateFavorite } from "../../tools/redux/slices/recipeListSlice";
 
 export interface IRecipeCard {
   backgroundColor?: string;
@@ -23,13 +25,20 @@ function RecipeCard({
   className,
 }: IRecipeCard) {
   const image = useImages().getImageURL;
+  const dispatch = useDispatch();
+
   return (
     <div
       className={`recipeCard ${className ? className : ""}`}
       style={{ background: backgroundColor }}
     >
       <img className="recipeCardImageFood" src={image(imageFood)} alt="" />
-      <button className="recipeCardFavorite" onClick={() => {}}>
+      <button
+        className="recipeCardFavorite"
+        onClick={() => {
+          dispatch(updateFavorite(recipeId!));
+        }}
+      >
         <img
           className="recipeCardFavoriteImage"
           src={favorite ? image("favoriteOn") : image("favoriteOff")}

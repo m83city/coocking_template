@@ -14,14 +14,16 @@ export const recipeListSlice = createSlice({
     initialState,
     reducers:{
         updateFavorite: (state, payload:{type:string, payload: string}) =>{
-            return state.map((recipeObject:IListRecipeCard) => {
-                return recipeObject.recipeId ===payload.payload ?
-                {...recipeObject, favorite:recipeObject.favorite!}: 
-                {...recipeObject}
+            const recipeList = state.map((recipe) =>{
+                if (recipe.recipeId === payload.payload){
+                    return{...recipe, favorite:!recipe.favorite }
+                }else{
+                    return {...recipe}
+                }
             })
+            return recipeList
         },
         setRecipeList: (state, payload:{type:string, payload:IListRecipeCard[]}) =>{
-            console.log(payload.payload)
             return payload.payload
         },
     }

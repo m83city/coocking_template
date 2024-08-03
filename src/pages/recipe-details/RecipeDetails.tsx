@@ -5,6 +5,8 @@ import "./RecipeDetails.scss";
 import { RootState } from "../../tools/redux/interfaces/shared";
 import { recipeMock } from "../../tools/redux/slices/recipeListSlice";
 import useImages from "../../tools/hook/useImages";
+import { v4 } from "uuid";
+import { AuthorBadge } from "../../component/basic/AuthorBadge";
 export const RecipeDetails = () => {
   const recipesList = useSelector((store: RootState) => store.recipeList);
 
@@ -13,7 +15,7 @@ export const RecipeDetails = () => {
     recipeId: "0696b562-dca2-494f-b519-8ba2c4be929e",
     recipeName: "Health Japanese Fried Rice",
     details: {
-      createDate: new Date("2017-01-26"),
+      createDate: new Date(1990, 12, 1),
       authonName: "Edvard More",
       cookTime: 30,
       directions: [
@@ -64,33 +66,40 @@ export const RecipeDetails = () => {
     },
   };
   const image = useImages().getImageURL;
+  const DetailsTag = ({ title, time }: { title: string; time: number }) => {
+    return (
+      <div>
+        <p>{title}</p>
+        <time>{`${time} Minutes`}</time>
+      </div>
+    );
+  };
   return (
     <>
-      <header>
-        <div>
-          <h1>{mock.recipeName}</h1>
-          <div className="carouselAuthorContainerNamespaces">
-            <img
-              className="carouselAuthorImage"
-              src={image("authorImage")}
-              alt="Author"
-            ></img>
-            <div className="carouselNameContainer">
-              <div>{mock.details.authonName}</div>
-              <div>{mock.details.createDate.toString()}</div>
-            </div>
-          </div>
-          <div>
-            <p>{"PREP TIME"}</p>
-            <time>{`${mock.details.prepTime} Minutes`}</time>
-          </div>
-          <div>
-            <p>{"COOK TIME"}</p>
-            <time>{`${mock.details.cookTime} Minutes`}</time>
-          </div>
+      <header className="detailsHeader">
+        <div className="detailsHeaderContainer">
+          <h1 className="detailsHeaderName">{mock.recipeName}</h1>
+          <AuthorBadge
+            authorName={mock.details.authonName}
+            timeCreate={mock.details.createDate}
+          />
+          <DetailsTag
+            title="PREP TIME"
+            time={mock.details.prepTime}
+            key={v4()}
+          />
+          <DetailsTag
+            title="COOK TIME"
+            time={mock.details.cookTime}
+            key={v4()}
+          />
         </div>
-        <button>{"PRINT"}</button>
-        <button>{"SHARE"}</button>
+        <button>
+          <img></img> <p>{"PRINT"}</p>
+        </button>
+        <button>
+          <img></img> <p>{"SHARE"}</p>
+        </button>
       </header>
       <section>
         <div>

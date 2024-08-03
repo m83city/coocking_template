@@ -1,4 +1,4 @@
-import CarouselFood from "../../component/carousel/CarouselFood";
+import CarouselFood from "../../component/basic/carousel/CarouselFood";
 import Categories from "../../component/categories/Categories";
 import RecipesGrid from "../../component/recipeGrid/RecipesGrid";
 import Button from "../../component/basic/Button";

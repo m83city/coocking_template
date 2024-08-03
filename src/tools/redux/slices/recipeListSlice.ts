@@ -10,7 +10,7 @@ export interface IListRecipeCard {
 }
 export interface recipeMock {
     recipeId?: string;
-    dishName?: string;
+    recipeName?: string;
     favorite?: boolean;
     typeFood?: string;
     imageFood: ImagesType;

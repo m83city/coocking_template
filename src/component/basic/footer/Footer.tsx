@@ -1,4 +1,5 @@
 import useImages from "../../../tools/hook/useImages";
+import { Divider } from "../Divider";
 import "./Footer.scss";
 import { v4 } from "uuid";
 
@@ -30,7 +31,7 @@ function Footer() {
           })}
         </ul>
       </div>
-      <span className="footerDivider"></span>
+      <Divider dividerType="Horizontal" />
       <div className="footerContainerBottom">
         <span className="footerCopyrightBlock">
           {"© 2020 Flowbase. Powered by"}

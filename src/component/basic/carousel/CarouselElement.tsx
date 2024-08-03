@@ -1,11 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
 import "./CarouselElement.scss";
-import TagFood from "../basic/TagFood";
-import Button from "../basic/Button";
-import useImages from "../../tools/hook/useImages";
+import TagFood from "../TagFood";
+import Button from "../Button";
+import useImages from "../../../tools/hook/useImages";
+import { AuthorBadge } from "../AuthorBadge";
+
 export interface ICarouselElement {
   authorName: string;
-  timeCreate: string;
+  timeCreate: Date;
   recipeCarouselTitle: string;
   recipeCarouselDescription: string;
   recipeTimeCooking: number;
@@ -13,6 +15,7 @@ export interface ICarouselElement {
 }
 function CarouselElement(carouselElement: ICarouselElement) {
   const image = useImages().getImageURL;
+
   return (
     <div className="carousel">
       <section className="carouselContent">
@@ -36,17 +39,10 @@ function CarouselElement(carouselElement: ICarouselElement) {
           ))}
         </div>
         <div className="carouselAuthorContainer">
-          <div className="carouselAuthorContainerNamespaces">
-            <img
-              className="carouselAuthorImage"
-              src={image("authorImage")}
-              alt="Author"
-            ></img>
-            <div className="carouselNameContainer">
-              <div>{carouselElement.authorName}</div>
-              <div>{carouselElement.timeCreate}</div>
-            </div>
-          </div>
+          <AuthorBadge
+            authorName={carouselElement.authorName}
+            timeCreate={carouselElement.timeCreate}
+          />
           <Button
             label={"View Recipes"}
             buttonImageURL={image("buttonCircle")}

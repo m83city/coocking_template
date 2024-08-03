@@ -1,0 +1,11 @@
+.divider {
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  &Vertical {
+    width: 1px;
+    height: 100%;
+  }
+  &Horizontal {
+    width: 100%;
+    height: 1px;
+  }
+}

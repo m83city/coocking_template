@@ -41,23 +41,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    &Namespaces {
-      max-width: fit-content;
-      display: flex;
-      flex-direction: row;
-    }
-  }
-  &AuthorImage {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-  }
-  &NameContainer {
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
   &DishPhoto {
     border-bottom-right-radius: 60px;

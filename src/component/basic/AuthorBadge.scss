@@ -1,0 +1,22 @@
+.author {
+  display: flex;
+  flex-direction: row;
+  &Namespaces {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: start;
+  }
+  &Image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  &Name {
+    font-weight: bold;
+  }
+  &CreateDate {
+    color: rgba($color: #000000, $alpha: 0.6);
+  }
+}

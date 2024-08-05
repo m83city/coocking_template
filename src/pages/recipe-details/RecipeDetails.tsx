@@ -4,9 +4,10 @@ import RecipesGrid from "../../component/recipeGrid/RecipesGrid";
 import "./RecipeDetails.scss";
 import { RootState } from "../../tools/redux/interfaces/shared";
 import { recipeMock } from "../../tools/redux/slices/recipeListSlice";
-import useImages from "../../tools/hook/useImages";
+import useImages, { ImagesType } from "../../tools/hook/useImages";
 import { v4 } from "uuid";
 import { AuthorBadge } from "../../component/basic/AuthorBadge";
+import { Divider } from "../../component/basic/Divider";
 export const RecipeDetails = () => {
   const recipesList = useSelector((store: RootState) => store.recipeList);
 
@@ -66,14 +67,37 @@ export const RecipeDetails = () => {
     },
   };
   const image = useImages().getImageURL;
-  const DetailsTag = ({ title, time }: { title: string; time: number }) => {
+  const DetailsTag = ({
+    title,
+    time,
+    imageURL,
+  }: {
+    title: string;
+    time: number;
+    imageURL: ImagesType;
+  }) => {
     return (
-      <div>
-        <p>{title}</p>
-        <time>{`${time} Minutes`}</time>
+      <div className="headerTag">
+        <img className="headerTagImage" src={image(imageURL)} alt=""></img>
+        <div className="headerTagContainer">
+          <p className="headerTagTitle">{title}</p>
+          <time className="headerTagTime">{`${time} Minutes`}</time>
+        </div>
       </div>
     );
   };
+  const HeaderButton = ({
+    imageURL,
+    title,
+  }: {
+    title: string;
+    imageURL: ImagesType;
+  }) => (
+    <button className="headerButton">
+      <img className="headerButtonImage" src={image(imageURL)} alt=""></img>{" "}
+      <p className="headerButtonTitle">{title}</p>
+    </button>
+  );
   return (
     <>
       <header className="detailsHeader">
@@ -83,23 +107,24 @@ export const RecipeDetails = () => {
             authorName={mock.details.authonName}
             timeCreate={mock.details.createDate}
           />
+          <Divider dividerType="Vertical" />
           <DetailsTag
+            imageURL="timer"
             title="PREP TIME"
             time={mock.details.prepTime}
             key={v4()}
           />
+          <Divider dividerType="Vertical" />
           <DetailsTag
+            imageURL="timer"
             title="COOK TIME"
             time={mock.details.cookTime}
             key={v4()}
           />
+          <Divider dividerType="Vertical" />
         </div>
-        <button>
-          <img></img> <p>{"PRINT"}</p>
-        </button>
-        <button>
-          <img></img> <p>{"SHARE"}</p>
-        </button>
+        <HeaderButton imageURL="print" title="PRINT" key={v4()} />
+        <HeaderButton imageURL="share" title="SHARE" key={v4()} />
       </header>
       <section>
         <div>

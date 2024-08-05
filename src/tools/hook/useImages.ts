@@ -7,7 +7,6 @@ import meatBall from "../../img/meatBallCard.png";
 import chef from "../../img/chef.png";
 import favoriteOn from "../../img/favoriteOn.svg";
 import favoriteOff from "../../img/favoriteOff.svg";
-import timerImage from "../../img/timer.svg";
 import forkKnife from "../../img/forkKnife.svg";
 import adsMask from "../../img/adsMask.png";
 import adsFood from "../../img/adsFood.png";
@@ -29,6 +28,8 @@ import lunch from "../../img/lunch.png";
 import chocolate from "../../img/chocolate.png";
 import emailBoxLeft from "../../img/footer-email-box-left.png"
 import emailBoxRight from "../../img/footer-email-box-right.png"
+import print from "../../img/print.svg"
+import share from "../../img/share.svg"
 
  const images = {
   emailBoxLeft:emailBoxLeft,
@@ -53,7 +54,6 @@ import emailBoxRight from "../../img/footer-email-box-right.png"
   chef:chef,
   favoriteOn:favoriteOn,
   favoriteOff:favoriteOff,
-  timerImage:timerImage,
   forkKnife:forkKnife,
   adsMask:adsMask,
   adsFood:adsFood,
@@ -61,7 +61,9 @@ import emailBoxRight from "../../img/footer-email-box-right.png"
   dishPreview:dishPreview,
   authorImage:authorImage,
   pergamentImage:pergamentImage,
-  buttonCircle:buttonCircle
+  buttonCircle:buttonCircle,
+  print:print,
+  share:share
 }
 export type ImagesType = keyof typeof images;
 

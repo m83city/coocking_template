@@ -1,0 +1,30 @@
+.header {
+  &Button {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    align-items: center;
+    &Image {
+      background-color: #e7fafe;
+      border-radius: 100%;
+      padding: 30px;
+    }
+  }
+  &Tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &Container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    &Title {
+      margin: 0;
+    }
+    &Time {
+    }
+  }
+}

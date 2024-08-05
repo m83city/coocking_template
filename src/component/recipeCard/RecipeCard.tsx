@@ -50,7 +50,7 @@ function RecipeCard({
         <TagFood
           backgroundColor={"Transparent"}
           title={"30 Minutes"}
-          logoUrl={image("timerImage")}
+          logoUrl={image("timer")}
         />
         <TagFood
           backgroundColor={"Transparent"}
